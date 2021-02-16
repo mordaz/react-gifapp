@@ -1,17 +1,19 @@
+//libreria para poder crear elementos html usando javascript
 import React from 'react';
+//libreria para manipular los elementos html del documento html
 import ReactDOM from 'react-dom';
+
+//importamos el componente que creamos 
+import GifExpertApp  from './GifExpertApp';
+
+//importamos la plantilla css
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+//referenciamos el <div id="app"></div> del documento principal index.html
+//para poder hacer esta referencia se requiere importar el react-dom
+const divRoot = document.querySelector('#app');
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+//enviamos el componente de saludo al documento usando ReactDOM
+//los componentes de react se deben enviar con <>
+//si deseo enviar properties al componente debo agregarlos despues del nombre de la app
+ReactDOM.render( <GifExpertApp /> , divRoot );
